@@ -24,50 +24,23 @@ public class Result<T> implements Serializable {
 	@ApiModelProperty(value = "成功标志")
 	private boolean success = true;
 
-	public Result<T> setSuccess(boolean success){
-		this.success=success;
-		return this;
-	}
-
 	/**
 	 * 返回处理消息
 	 */
 	@ApiModelProperty(value = "返回处理消息")
 	private String message = "操作成功！";
 
-	public Result<T> setMessage(String message){
-		this.message=message;
-		return this;
-	}
-
 	/**
 	 * 返回代码
 	 */
 	@ApiModelProperty(value = "返回代码")
 	private Integer code = 0;
-
-	public Result<T> setCode(int code){
-		this.code=code;
-		return this;
-	}
 	
 	/**
 	 * 返回数据对象 data
 	 */
 	@ApiModelProperty(value = "返回数据对象")
 	private T result;
-<<<<<<< HEAD
-
-	public Result<T> setResult(T result){
-		this.result=result;
-		return this;
-	}
-
-	public Result() {
-		
-	}
-=======
->>>>>>> pr/1
 	
 	/**
 	 * 时间戳
@@ -75,24 +48,17 @@ public class Result<T> implements Serializable {
 	@ApiModelProperty(value = "时间戳")
 	private long timestamp = System.currentTimeMillis();
 
-<<<<<<< HEAD
-=======
 	public Result() {
 		
 	}
 	
->>>>>>> pr/1
 	public Result<T> error500(String message) {
 		this.message = message;
 		this.code = CommonConstant.SC_INTERNAL_SERVER_ERROR_500;
 		this.success = false;
 		return this;
 	}
-<<<<<<< HEAD
-
-=======
 	
->>>>>>> pr/1
 	public Result<T> success(String message) {
 		this.message = message;
 		this.code = CommonConstant.SC_OK_200;
